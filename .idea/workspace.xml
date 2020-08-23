@@ -42,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597606143359</updated>
-      <workItem from="1597606144868" duration="97220000" />
+      <workItem from="1597606144868" duration="99098000" />
     </task>
     <servers />
   </component>
@@ -58,10 +58,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598195419664" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1597841865908">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598203669612">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1597841865908" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598203669612" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

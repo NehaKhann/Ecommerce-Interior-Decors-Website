@@ -6,7 +6,7 @@
 				</a>
 
 			  	<a class="brand" href="index.html">
-			  		Shopping Portal | Admin
+			  		NIIT INTERIOR DECORS | Admin
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">

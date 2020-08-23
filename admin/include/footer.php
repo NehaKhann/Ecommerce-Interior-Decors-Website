@@ -2,6 +2,6 @@
 		<div class="container">
 			 
 
-			<b class="copyright">&copy; 2017 Shopping Portal </b> All rights reserved.
+			<b class="copyright">&copy; 2020 NIIT INTERIOR DECORS </b> All rights reserved.
 		</div>
 	</div>
