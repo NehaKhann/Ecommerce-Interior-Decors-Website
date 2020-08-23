@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 error_reporting(0);
 include('includes/config.php');
@@ -21,7 +21,7 @@ if(isset($_POST['remove_code']))
 
 if(!empty($_SESSION['cart'])){
 		foreach($_POST['remove_code'] as $key){
-			
+
 				unset($_SESSION['cart'][$key]);
 		}
 			echo "<script>alert('Your Cart has been Updated');</script>";
@@ -30,11 +30,11 @@ if(!empty($_SESSION['cart'])){
 // code for insert product in order table
 
 
-if(isset($_POST['ordersubmit'])) 
+if(isset($_POST['ordersubmit']))
 {
-	
+
 if(strlen($_SESSION['login'])==0)
-    {   
+    {
 header('location:login.php');
 }
 else{
@@ -119,13 +119,13 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
 		<!-- Demo Purpose Only. Should be removed in production : END -->
 
-		
+
 		<!-- Icons/Glyphs -->
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-        <!-- Fonts --> 
+        <!-- Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		
+
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -137,9 +137,9 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 
 	</head>
     <body class="cnt-home">
-	
-		
-	
+
+
+
 		<!-- ============================================== HEADER ============================================== -->
 <header class="header-style-1">
 <?php include('includes/top-header.php');?>
@@ -164,7 +164,7 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 			<div class="shopping-cart">
 				<div class="col-md-12 col-sm-12 shopping-cart-table ">
 	<div class="table-responsive">
-<form name="cart" method="post">	
+<form name="cart" method="post">
 <?php
 if(!empty($_SESSION['cart'])){
 	?>
@@ -174,8 +174,7 @@ if(!empty($_SESSION['cart'])){
 					<th class="cart-romove item">Remove</th>
 					<th class="cart-description item">Image</th>
 					<th class="cart-product-name item">Product Name</th>
-			
-					<th class="cart-qty item">Quantity</th>
+
 					<th class="cart-sub-total item">Price Per unit</th>
 					<th class="cart-sub-total item">Shipping Charge</th>
 					<th class="cart-total last-item">Grand Total</th>
@@ -242,176 +241,70 @@ $num=mysqli_num_rows($rt);
 								<?php } ?>
 							</div>
 						</div><!-- /.row -->
-						
+
 					</td>
-					<td class="cart-product-quantity">
-						<div class="quant-input">
-				                <div class="arrows">
-				                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-				                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-				                </div>
-				             <input type="text" value="<?php echo $_SESSION['cart'][$row['id']]['quantity']; ?>" name="quantity[<?php echo $row['id']; ?>]">
-				             
-			              </div>
-		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rs"." ".$row['productPrice']; ?>.00</span></td>
+
+
+
+                    <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rs"." ".$row['productPrice'] ?>.00</span></td>
 <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rs"." ".$row['shippingCharge']; ?>.00</span></td>
 
 					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
 				</tr>
 
+
 				<?php } }
 $_SESSION['pid']=$pdtid;
 				?>
-				
+
 			</tbody><!-- /tbody -->
 		</table><!-- /table -->
-		
+
 	</div>
-</div><!-- /.shopping-cart-table -->			<div class="col-md-4 col-sm-12 estimate-ship-tax">
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>
-					<span class="estimate-title">Shipping Address</span>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td>
-						<div class="form-group">
-<?php
-$query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
-while($row=mysqli_fetch_array($query))
-{
-?>
+</div><!-- /.shopping-cart-table -->
 
-<div class="form-group">
-					    <label class="info-title" for="Billing Address">Billing Address<span>*</span></label>
-					    <textarea class="form-control unicase-form-control text-input"  name="billingaddress" required="required"><?php echo $row['billingAddress'];?></textarea>
-					  </div>
+                <div class="col-md-4 col-sm-12 cart-shopping-total">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>
 
+                                <div class="cart-grand-total">
+                                    Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
+                                </div>
+                            </th>
+                        </tr>
+                        </thead><!-- /thead -->
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="cart-checkout-btn pull-right">
+                                    <button type="submit" name="ordersubmit" class="btn btn-primary">PROCCED TO CHEKOUT</button>
 
-
-						<div class="form-group">
-					    <label class="info-title" for="Billing State ">Billing State  <span>*</span></label>
-			 <input type="text" class="form-control unicase-form-control text-input" id="bilingstate" name="bilingstate" value="<?php echo $row['billingState'];?>" required>
-					  </div>
-					  <div class="form-group">
-					    <label class="info-title" for="Billing City">Billing City <span>*</span></label>
-					    <input type="text" class="form-control unicase-form-control text-input" id="billingcity" name="billingcity" required="required" value="<?php echo $row['billingCity'];?>" >
-					  </div>
- <div class="form-group">
-					    <label class="info-title" for="Billing Pincode">Billing Pincode <span>*</span></label>
-					    <input type="text" class="form-control unicase-form-control text-input" id="billingpincode" name="billingpincode" required="required" value="<?php echo $row['billingPincode'];?>" >
-					  </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody><!-- /tbody -->
+                    </table>
+                    <?php } else {
+                        echo "Your shopping Cart is empty";
+                    }?>
+                </div>			</div>
+        </div>
+        </form>
 
 
-					  <button type="submit" name="update" class="btn-upper btn btn-primary checkout-page-button">Update</button>
-			
-					<?php } ?>
-		
-						</div>
-					
-					</td>
-				</tr>
-		</tbody><!-- /tbody -->
-	</table><!-- /table -->
-</div>
-
-<div class="col-md-4 col-sm-12 estimate-ship-tax">
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>
-					<span class="estimate-title">Billing Address</span>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td>
-						<div class="form-group">
-		<?php
-$query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
-while($row=mysqli_fetch_array($query))
-{
-?>
-
-<div class="form-group">
-					    <label class="info-title" for="Shipping Address">Shipping Address<span>*</span></label>
-					    <textarea class="form-control unicase-form-control text-input"  name="shippingaddress" required="required"><?php echo $row['shippingAddress'];?></textarea>
-					  </div>
-
-
-
-						<div class="form-group">
-					    <label class="info-title" for="Billing State ">Shipping State  <span>*</span></label>
-			 <input type="text" class="form-control unicase-form-control text-input" id="shippingstate" name="shippingstate" value="<?php echo $row['shippingState'];?>" required>
-					  </div>
-					  <div class="form-group">
-					    <label class="info-title" for="Billing City">Shipping City <span>*</span></label>
-					    <input type="text" class="form-control unicase-form-control text-input" id="shippingcity" name="shippingcity" required="required" value="<?php echo $row['shippingCity'];?>" >
-					  </div>
- <div class="form-group">
-					    <label class="info-title" for="Billing Pincode">Shipping Pincode <span>*</span></label>
-					    <input type="text" class="form-control unicase-form-control text-input" id="shippingpincode" name="shippingpincode" required="required" value="<?php echo $row['shippingPincode'];?>" >
-					  </div>
-
-
-					  <button type="submit" name="shipupdate" class="btn-upper btn btn-primary checkout-page-button">Update</button>
-					<?php } ?>
-
-		
-						</div>
-					
-					</td>
-				</tr>
-		</tbody><!-- /tbody -->
-	</table><!-- /table -->
-</div>
-<div class="col-md-4 col-sm-12 cart-shopping-total">
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>
-					
-					<div class="cart-grand-total">
-						Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
-					</div>
-				</th>
-			</tr>
-		</thead><!-- /thead -->
-		<tbody>
-				<tr>
-					<td>
-						<div class="cart-checkout-btn pull-right">
-							<button type="submit" name="ordersubmit" class="btn btn-primary">PROCCED TO CHEKOUT</button>
-						
-						</div>
-					</td>
-				</tr>
-		</tbody><!-- /tbody -->
-	</table>
-	<?php } else {
-echo "Your shopping Cart is empty";
-		}?>
-</div>			</div>
-		</div> 
-		</form>
-<?php echo include('includes/brands-slider.php');?>
 </div>
 </div>
 <?php include('includes/footer.php');?>
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	
+
 	<script src="assets/js/bootstrap.min.js"></script>
-	
+
 	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
-	
+
 	<script src="assets/js/echo.min.js"></script>
 	<script src="assets/js/jquery.easing-1.3.min.js"></script>
 	<script src="assets/js/bootstrap-slider.min.js"></script>
@@ -422,11 +315,11 @@ echo "Your shopping Cart is empty";
 	<script src="assets/js/scripts.js"></script>
 
 	<!-- For demo purposes – can be removed on production -->
-	
+
 	<script src="switchstylesheet/switchstylesheet.js"></script>
-	
+
 	<script>
-		$(document).ready(function(){ 
+		$(document).ready(function(){
 			$(".changecolor").switchstylesheet( { seperator:"color"} );
 			$('.show-theme-options').click(function(){
 				$(this).parent().toggleClass('open');
