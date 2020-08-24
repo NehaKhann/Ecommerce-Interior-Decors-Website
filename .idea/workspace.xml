@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be10369a-dae2-4bb6-ab0f-571643e72157" name="Default Changelist" comment="" />
+    <list default="true" id="be10369a-dae2-4bb6-ab0f-571643e72157" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/track-orders.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gC6Hw6MfNmAdAGfidvnmoGfYga" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled1" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Online-Shopping-Portal-project (1)" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -42,7 +52,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597606143359</updated>
-      <workItem from="1597606144868" duration="99098000" />
+      <workItem from="1597606144868" duration="99698000" />
+      <workItem from="1598241047534" duration="5827000" />
     </task>
     <servers />
   </component>
@@ -54,24 +65,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="415" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1597649672033" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1598195419664">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1598245152822">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598195419664" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598245152822" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598203669612">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598203669612" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/my-account.php</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
